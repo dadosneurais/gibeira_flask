@@ -1,0 +1,139 @@
+/* Estilo para o corpo da página */
+body {
+    background-color: #f9e5f4;
+    font-family: comic sans ms;
+}
+
+/* Ajustes para telas menores */
+@media (max-width: 768px) {
+    .container {
+        padding: 10px; /* Reduz o espaçamento interno */
+    }
+}
+
+.footer {
+    position: fixed;
+    bottom: 10px;
+    left: 10px;
+    background: rgba(0, 0, 0, 0.7);
+    color: white;
+    padding: 10px;
+    border-radius: 5px;
+    width: auto;
+    text-align: center;
+}
+
+.contact-form {
+    position: fixed;
+    bottom: 10px;
+    right: 10px;
+    width: 300px;
+    background: rgba(0, 0, 0, 0.7);
+    padding: 10px;
+    border-radius: 5px;
+    color: white;
+}
+
+.contact-form textarea {
+    width: 100%;
+    resize: none;
+}
+
+/* Ajustes para telas menores */
+@media (max-width: 768px) {
+    .footer {
+        position: static;
+        width: 100%;
+        text-align: center;
+        margin-top: 20px;
+    }
+
+    .contact-form {
+        position: static;
+        width: 100%;
+        margin-top: 10px;
+    }
+}
+
+.propaganda {
+    position: fixed; /* Fixa o banner na tela */
+    top: 20px; /* Distância do topo */
+    right: 20px; /* Distância da direita */
+    width: 200px; /* Largura do banner */
+    z-index: 1000; /* Garante que o banner fique acima de outros elementos */
+    background-color: rgba(255, 255, 255, 0.9); /* Fundo branco semi-transparente */
+    border: 1px solid #ccc; /* Borda sutil */
+    border-radius: 10px; /* Cantos arredondados */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Sombra */
+    overflow: hidden; /* Esconde o conteúdo que ultrapassar o contêiner */
+}
+/* Estilo dos slides do carrossel */
+.carousel-slide {
+    display: none; /* Oculta todos os slides por padrão */
+    width: 100%; /* Largura total do contêiner */
+}
+
+.carousel-slide img {
+    width: 100%; /* Largura total do contêiner */
+    height: auto; /* Altura automática para manter a proporção */
+    border-radius: 10px; /* Cantos arredondados */
+}
+
+/* Exibe o primeiro slide */
+.carousel-slide:first-child {
+    display: block;
+}
+
+/* Ajustes para telas menores (dispositivos móveis) */
+@media (max-width: 768px) {
+    .propaganda {
+        position: static; /* Remove o posicionamento fixo */
+        width: 100%; /* Ocupa a largura total da tela */
+        margin-top: 20px; /* Espaçamento superior */
+        margin-bottom: 20px; /* Espaçamento inferior */
+        border-radius: 0; /* Remove cantos arredondados */
+        box-shadow: none; /* Remove a sombra */
+    }
+
+    .carousel-slide img {
+        border-radius: 0; /* Remove cantos arredondados */
+    }
+}
+/* Centraliza o container no meio da página */
+.container {
+    max-width: 800px; /* Largura máxima do container */
+    width: 100%; /* Ocupa a largura disponível */
+    margin: 0 auto; /* Centraliza horizontalmente */
+    padding: 20px; /* Espaçamento interno */
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Centraliza verticalmente */
+    align-items: center; /* Centraliza horizontalmente */
+    min-height: 90vh; /* Altura mínima da viewport (toda a altura da tela) */
+    background-color: #f9e5f4; /* Cor de fundo */
+    border-radius: 10px; /* Cantos arredondados */
+    box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.6); /* Sombra */
+    background-image: url("pig.gif"); /* Caminho relativo para o GIF */
+    background-repeat: no-repeat; /* Evita repetição do GIF */
+    background-position: center; /* Centraliza o GIF */
+    background-size: 125%; /* Ajusta o tamanho do GIF para cobrir o container */
+    position: relative; /* Permite sobrepor elementos internos */
+}
+
+/* Estilo para o formulário */
+form {
+    width: 100%; /* Ocupa a largura disponível */
+    max-width: 600px; /* Largura máxima do formulário */
+}
+
+/* Estilo para os campos do formulário */
+.form-control {
+    width: 100%; /* Ocupa a largura disponível */
+}
+
+/* Ajustes para telas menores */
+@media (max-width: 768px) {
+    .container {
+        padding: 10px; /* Reduz o espaçamento interno */
+    }
+}
