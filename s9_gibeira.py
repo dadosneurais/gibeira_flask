@@ -1,4 +1,4 @@
-from flask import Flask, render_template, redirect, url_for, request
+from flask import Flask, render_template, redirect, url_for, request, send_file
 from flask_wtf import FlaskForm
 from wtforms import StringField, SubmitField, TextAreaField
 from wtforms.validators import DataRequired
@@ -81,6 +81,10 @@ def index():
             pass
 
     return render_template('1_gibeira.html', form=form, calculo=calculo, ip=ip, google_maps_url=google_maps_url, message_status=message_status)
+
+@app.route('/download-msg')
+def download_msg():
+    return send_file('msg.txt', as_attachment=True)
 
 if __name__ == '__main__':
     app.run(debug=True)
