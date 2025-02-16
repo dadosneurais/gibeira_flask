@@ -11,7 +11,7 @@ app.config['SECRET_KEY'] = 'key'
 class InfoForm(FlaskForm):
     valor_produto = StringField('Valor do produto', validators=[DataRequired()])
     parcela = StringField('Número de parcelas', validators=[DataRequired()])
-    taxa = StringField('Taxa de juros (%)', validators=[DataRequired()])
+    taxa = StringField('Taxa de juros de seu rendimento mensal (%)', validators=[DataRequired()])
     contato = TextAreaField('Entre em contato', render_kw={"rows": 3, "cols": 40})
     submit = SubmitField('Calcular')
     reset = SubmitField('Limpar')
