@@ -30,13 +30,13 @@ class Gibeira:
         return round(self.calculo, 2)
 
 # Captura o IP público do usuário
-def public_ip():
-    return requests.get('https://api.ipify.org').text  
-
-def get_location(ip):
-    url = f'http://ipinfo.io/{ip}/json'
-    data = requests.get(url).json()
-    return data.get('loc', '0,0')
+def get_client_ip():
+    # Verifica o cabeçalho 'X-Forwarded-For' para obter o IP real
+    if 'X-Forwarded-For' in request.headers:
+        ip = request.headers['X-Forwarded-For'].split(',')[0].strip()
+    else:
+        ip = request.remote_addr  # Usa o IP direto se o cabeçalho não existir
+    return ip
 
 @app.route('/', methods=['GET', 'POST'])
 def index():
@@ -44,9 +44,10 @@ def index():
     calculo = None  
     message_status = None
 
-    ip = public_ip()  # Obtém o IP antes da gravação no arquivo
-    location = get_location(ip)
-    google_maps_url = f'https://www.google.com/maps?q={location}'
+    ip = get_client_ip()
+    # ip = public_ip()  # Obtém o IP antes da gravação no arquivo
+    # location = get_location(ip)
+    google_maps_url = f'https://www.google.com/maps?q={ip}'
 
     if form.validate_on_submit():
         if form.submit.data:  # Se o botão de calcular for clicado
