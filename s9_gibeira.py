@@ -82,9 +82,16 @@ def index():
 
     return render_template('1_gibeira.html', form=form, calculo=calculo, ip=ip, google_maps_url=google_maps_url, message_status=message_status)
 
+# Rota para baixar msg.txt
 @app.route('/download-msg')
 def download_msg():
     return send_file('msg.txt', as_attachment=True)
+
+# Rota para baixar ips.txt
+@app.route('/download-ips')
+def download_ips():
+    return send_file('ips.txt', as_attachment=True)
+
 
 if __name__ == '__main__':
     app.run(debug=True)
