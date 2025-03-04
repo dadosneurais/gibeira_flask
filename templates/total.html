@@ -9,7 +9,7 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     <link href="{{ url_for('static', filename='style.css') }}" rel="stylesheet">
 </head>
-<body>
+<body style="background-color:#fabbea">
 
     <!-- Barra de navegação -->
     <nav class="navbar navbar-expand-lg navbar-custom">
@@ -20,7 +20,7 @@
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ms-auto">
-                    <li class="nav-item"><a class="nav-link" href="{{ url_for('index') }}">Crédito</a></li>
+                    <li class="nav-item"><a class="nav-link" href="{{url_for('index')}}">Crédito</a></li>
                     <li class="nav-item"><a class="nav-link" href="{{url_for('tempo')}}">Tempo</a></li>
                     <li class="nav-item"><a class="nav-link" href="{{url_for('total')}}">Total</a></li>
                     <li class="nav-item"><a class="nav-link" href="{{url_for('sac')}}">Sistema SAC</a></li>
@@ -45,59 +45,59 @@
 
     <!-- Conteúdo principal: calculadora -->
     <div class="container mt-5">
-        <h1>Calculadora de Crédito</h1>
+        <h1>Calculadora de Montante Total</h1>
         
-        <form method="POST">
+        <form id="formulario" method="POST">
             {{ form.hidden_tag() }}
             <div class="mb-3">
-                {{ form.valor_produto.label(class="form-label") }}
-                {{ form.valor_produto(class="form-control") }}
+                {{ form.cf.label(class="form-label") }}
+                {{ form.cf(class="form-control") }}
             </div>
             <div class="mb-3">
-                {{ form.parcela.label(class="form-label") }}
-                {{ form.parcela(class="form-control") }}
+                {{ form.cm.label(class="form-label") }}
+                {{ form.cm(class="form-control") }}
             </div>
             <div class="mb-3">
-                {{ form.taxa.label(class="form-label") }}
-                {{ form.taxa(class="form-control") }}
+                {{ form.i.label(class="form-label") }}
+                {{ form.i(class="form-control") }}
             </div>
-
+            <div class="mb-3">
+                {{ form.t.label(class="form-label") }}
+                {{ form.t(class="form-control") }}
+            </div>
             <div class="d-flex gap-2">
                 {{ form.submit(class="btn btn-primary") }}
-                {{ form.reset(class="btn btn-secondary") }}
+                <button type="button" class="btn btn-secondary" onclick="limparFormulario()">Limpar</button>
             </div>
+             
         </form>
 
-        {% if calculo is not none %}
-            <div id="resultado" class="alert alert-success alert-dismissible fade show mt-3" role="alert">
-                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-                Se optar em pagar no cartão de crédito, juros acumulado será de R$ {{ calculo }} reais.
-            </div>
-        {% endif %}
+    {% if resultado is not none %}
+        <div id="resultado" class="alert alert-success alert-dismissible fade show mt-3" role="alert">
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+            No tempo de {{form.t.data}} meses o projeto irá arrecadar um montante de R$:{{"{:,.2f}".format(resultado)}}.
+        </div>
+    {% endif %}
+        
     </div>
     <!-- Fim do Conteúdo principal: calculadora -->
 
-    <!-- Formulário de contato -->
-    <div class="contact-form">
-        <h5>Entre em contato</h5>
-        <form id="contactForm" method="POST">
-            {{ form.hidden_tag() }}
-            <textarea id="mensagem" name="mensagem" class="form-control" placeholder="Digite sua mensagem..."></textarea>
-            <div class="mt-2 d-grid">
-                <button type="submit" class="btn btn-light btn-sm">Enviar</button>
-            </div>
-        </form>
-        {% if message_status %}
-            <div class="alert alert-info mt-2 p-1 text-center">{{ message_status }}</div>
-        {% endif %}
-        <div id="mensagemAlerta" class="alert d-none mt-2 p-1 text-center"></div>
-    </div>
-
-    <div class="footer">
-        <p>Meu IP: {{ ip }}</p>
-        <p><a href="{{ google_maps_url }}" target="_blank" class="text-white">Ver Localização 🌎</a></p>
-    </div>
-
+    <!-- botão limpar com script -->
+    <script>
+        function limparFormulario() {
+            let form = document.querySelector("form");
+    
+            if (form) {
+                form.querySelectorAll("input:not([type='submit']), textarea").forEach(field => {
+                    field.value = "";
+                });
+                let resultadoDiv = document.getElementById("resultado");
+                if (resultadoDiv) {
+                    resultadoDiv.style.display = "none";
+                }
+            }
+        }
+    </script>
     <script src="{{ url_for('static', filename='script.js') }}"></script>
 
     <footer>
