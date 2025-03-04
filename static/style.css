@@ -1,21 +1,18 @@
-/* Estilo para o corpo da página */
 body {
     background-color: #f9e5f4;
     font-family: comic sans ms;
 }
-
-/* Ajustes para telas menores */
 @media (max-width: 768px) {
     .container {
-        padding: 10px; /* Reduz o espaçamento interno */
+        padding: 10px;
     }
 }
 
 .navbar-custom {
-    background-color: #d5b9dd !important; /* Cor personalizada */
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3); /* Sombra suave */
-    border-radius: 0 0 10px 10px; /* Cantos arredondados na parte inferior */
-    padding: 10px 0; /* Espaçamento vertical */
+    background-color: #d5b9dd !important; 
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3); 
+    border-radius: 0 0 10px 10px; 
+    padding: 10px 0; 
 }
 
 
@@ -64,34 +61,34 @@ body {
 }
 
 .propaganda {
-    position: fixed; /* Fixa o banner na tela */
-    top: 80px; /* Distância do topo */
-    right: 20px; /* Distância da direita */
-    width: 350px; /* Largura do banner */
-    z-index: 1000; /* Garante que o banner fique acima de outros elementos */
-    background-color: rgba(255, 255, 255, 0.9); /* Fundo branco semi-transparente */
-    border: 1px solid #ccc; /* Borda sutil */
-    border-radius: 10px; /* Cantos arredondados */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Sombra */
-    overflow: hidden; /* Esconde o conteúdo que ultrapassar o contêiner */
+    position: fixed; 
+    top: 80px;
+    right: 20px; 
+    width: 350px; 
+    z-index: 1000; 
+    background-color: rgba(255, 255, 255, 0.9);
+    border: 1px solid #ccc; 
+    border-radius: 10px; 
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    overflow: hidden; 
 }
 @media (max-width: 1560px) {
     .propaganda {
-        width: 250px; /* Diminui a largura */
-        top: 70px; /* Ajusta a posição */
-        right: 15px; /* Ajusta a margem */
+        width: 250px; 
+        top: 70px; 
+        right: 15px; 
     }
 }
 /* Estilo dos slides do carrossel */
 .carousel-slide {
-    display: none; /* Oculta todos os slides por padrão */
-    width: 100%; /* Largura total do contêiner */
+    display: none; 
+    width: 100%; 
 }
 
 .carousel-slide img {
-    width: 100%; /* Largura total do contêiner */
-    height: auto; /* Altura automática para manter a proporção */
-    border-radius: 10px; /* Cantos arredondados */
+    width: 100%; 
+    height: auto;
+    border-radius: 10px; 
 }
 
 /* Exibe o primeiro slide */
@@ -102,54 +99,54 @@ body {
 /* Ajustes para telas menores (dispositivos móveis) */
 @media (max-width: 768px) {
     .propaganda {
-        position: static; /* Remove o posicionamento fixo */
-        width: 100%; /* Ocupa a largura total da tela */
-        margin-top: 20px; /* Espaçamento superior */
-        margin-bottom: 20px; /* Espaçamento inferior */
-        border-radius: 0; /* Remove cantos arredondados */
-        box-shadow: none; /* Remove a sombra */
+        position: static; 
+        width: 100%; 
+        margin-top: 20px; 
+        margin-bottom: 20px; 
+        border-radius: 0;
+        box-shadow: none; 
     }
 
     .carousel-slide img {
-        border-radius: 0; /* Remove cantos arredondados */
+        border-radius: 0; 
     }
 }
 /* Centraliza o container no meio da página */
 .container {
-    max-width: 800px; /* Largura máxima do container */
-    width: 100%; /* Ocupa a largura disponível */
-    margin: 0 auto; /* Centraliza horizontalmente */
-    padding: 20px; /* Espaçamento interno */
+    max-width: 800px; 
+    width: 100%; 
+    margin: 0 auto; 
+    padding: 20px; 
     display: flex;
     flex-direction: column;
-    justify-content: center; /* Centraliza verticalmente */
-    align-items: center; /* Centraliza horizontalmente */
-    min-height: 90vh; /* Altura mínima da viewport (toda a altura da tela) */
-    background-color: #f9e5f4; /* Cor de fundo */
-    border-radius: 10px; /* Cantos arredondados */
-    box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.6); /* Sombra */
-    background-image: url("pig.gif"); /* Caminho relativo para o GIF */
-    background-repeat: no-repeat; /* Evita repetição do GIF */
-    background-position: center; /* Centraliza o GIF */
-    background-size: 125%; /* Ajusta o tamanho do GIF para cobrir o container */
-    position: relative; /* Permite sobrepor elementos internos */
+    justify-content: center; 
+    align-items: center; 
+    min-height: 90vh; 
+    background-color: #f9e5f4; 
+    border-radius: 10px; 
+    box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.6); 
+    background-image: url("pig.gif"); 
+    background-repeat: no-repeat; 
+    background-position: center; 
+    background-size: 125%; 
+    position: relative; 
 }
 
 /* Estilo para o formulário */
 form {
-    width: 100%; /* Ocupa a largura disponível */
-    max-width: 600px; /* Largura máxima do formulário */
+    width: 100%; 
+    max-width: 600px; 
 }
 
 /* Estilo para os campos do formulário */
 .form-control {
-    width: 100%; /* Ocupa a largura disponível */
+    width: 100%; 
 }
 
 /* Ajustes para telas menores */
 @media (max-width: 768px) {
     .container {
-        padding: 10px; /* Reduz o espaçamento interno */
+        padding: 10px; 
     }
 }
 footer{
