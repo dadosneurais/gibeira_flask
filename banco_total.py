@@ -19,7 +19,7 @@ def calc_total(cf, cm, i, t):
     try:
         cf = float(cf.replace(",", "."))
         cm = float(cm.replace(",", "."))
-        i = float(i.replace(",", "."))
+        i = float(i.replace(",", "."))/100
         t = int(t.replace(",", "."))
 
         if i == 0:
