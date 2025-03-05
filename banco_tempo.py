@@ -20,7 +20,7 @@ def calc_tempo(cf, cm, i, total):
     try:
         cf = float(cf.replace(",", "."))
         cm = float(cm.replace(",", "."))
-        i = float(i.replace(",", "."))
+        i = float(i.replace(",", "."))/100
         total = float(total.replace(",", "."))
 
         log1 = math.log(((cm / i) + total) / ((cm / i) + cf))
