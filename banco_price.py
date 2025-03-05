@@ -17,7 +17,7 @@ class PriceForm(FlaskForm):
 def calcular_price(sd, i, t):
     try:
         sd = float(sd.replace(",", "."))  # Convertendo para float
-        i = float(i.replace(",", "."))
+        i = float(i.replace(",", "."))/100
         t = int(t)  # Convertendo para inteiro
 
         # Cálculo da parcela fixa (PMT)
