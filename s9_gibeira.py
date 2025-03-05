@@ -24,7 +24,7 @@ class Gibeira:
     def __init__(self, valor_produto, parcela, taxa):
         self.valor_produto = float(valor_produto)
         self.parcela = int(parcela)
-        self.taxa = float(taxa)
+        self.taxa = float(taxa)/100
         self.calculo = 0
     def calc(self):
         v_parcelas = self.valor_produto / self.parcela
