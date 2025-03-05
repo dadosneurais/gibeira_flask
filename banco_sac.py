@@ -16,7 +16,7 @@ class SACForm(FlaskForm):
 def calcular_sac(sd, i, t):
     try:
         sd = float(sd.replace(",", "."))
-        i = float(i.replace(",", "."))
+        i = float(i.replace(",", "."))/100
         t = int(t)
 
         amort = sd / t  # amortização constante
